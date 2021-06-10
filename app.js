@@ -11,7 +11,7 @@ function getProblem() {
 function displayProblems(problems) {
   console.log(problems);
   probs = problems;
-  document.getElementById("status").innerHTML =
+  document.getElementById("status").innerText =
     "Problem Set Loaded. Now You Can Search";
   check = true;
 }
