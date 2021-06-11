@@ -1,6 +1,7 @@
 const url = {
   problems: "https://codeforces.com/api/problemset.problems",
 };
+document.getElementById("userinput").style.visibility = "hidden";
 let probs,
   check = false;
 let container = document.getElementById("problems");
@@ -12,8 +13,9 @@ function getProblem() {
 function displayProblems(problems) {
   probs = problems;
   document.getElementById("status").innerHTML =
-    "<span>Status: </span>Problem Set Loaded. Now You Can Search";
+    `<span>Status: <i class="bi bi-check-lg" width= "32" height= "32"></i> </span>Problem Set Loaded. Now You Can Search`;
   check = true;
+  document.getElementById("userinput").style.visibility = "visible";
 }
 
 setTimeout(getProblem, 3000);
@@ -24,7 +26,6 @@ function searchProblem() {
     let arr = probs.result.problems.filter((item) =>
       item.name.toUpperCase().includes(`${toSearch.toUpperCase()}`)
     );
-    console.log(arr);
     let links = arr.map((x) => ({
       name: x.name,
       link: `https://codeforces.com/contest/${x.contestId}/problem/${x.index}`,
@@ -35,7 +36,8 @@ function searchProblem() {
         let anchors = document.createElement("a");
         anchors.href = i.link;
         anchors.innerText = `${i.name}  `;
-        anchors.style.margin = "10px 8px";
+        // anchors.style.margin = "10px 8px";
+      
         anchors.target = "_blank";
         container.appendChild(anchors);
       }
