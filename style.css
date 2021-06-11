@@ -13,13 +13,18 @@ body {
 }
 h1 {
   margin: 0;
+  padding: 8px;
+  font-size: 34px;
 }
 #userinput {
-  padding: 10px 15px;
+  padding: 5px 0px;
   border: 5px solid white;
   box-shadow: none;
   background-color: black;
   color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
 }
 #problems{
     display: flex;
@@ -30,6 +35,9 @@ h1 {
 #problems a{
     
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     
+}
+span{
+  color: greenyellow;
 }

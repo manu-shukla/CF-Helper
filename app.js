@@ -3,7 +3,7 @@ const url = {
 };
 let probs,
   check = false;
-  let container = document.getElementById("problems");
+let container = document.getElementById("problems");
 function getProblem() {
   fetch(`${url.problems}`)
     .then((problems) => problems.json())
@@ -16,7 +16,7 @@ function displayProblems(problems) {
   check = true;
 }
 
-getProblem();
+setTimeout(getProblem, 3000);
 function searchProblem() {
   if (check == true) {
     let toSearch = document.getElementById("userinput").value;
@@ -30,17 +30,16 @@ function searchProblem() {
       link: `https://codeforces.com/contest/${x.contestId}/problem/${x.index}`,
     }));
     if (toSearch != "") {
-    
       container.innerHTML = "";
       for (let i of links) {
         let anchors = document.createElement("a");
         anchors.href = i.link;
         anchors.innerText = `${i.name}  `;
         anchors.style.margin = "10px 8px";
+        anchors.target = "_blank";
         container.appendChild(anchors);
       }
-    }
-    else{
+    } else {
       container.innerHTML = "";
     }
   } else {
