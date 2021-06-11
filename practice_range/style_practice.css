@@ -1,0 +1,82 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Pangolin", cursive;
+  transition: 0.5s ease-in-out;
+}
+h3 {
+  margin-top: 12px;
+}
+h4 {
+  margin: 0;
+  text-align: center;
+}
+h1 {
+  margin: 10px;
+  text-align: center;
+}
+
+.heads {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#handle {
+  padding: 10px 5px;
+  margin: 35px;
+  border-radius: 8px;
+  outline: none;
+  background-color: black;
+  color: #39ff14;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+
+  box-shadow: 10px 10px 5px #39ff14;
+  -moz-box-shadow: 10px 10px 5px #39ff14;
+  -webkit-box-shadow: 10px 10px 5px #39ff14;
+  -khtml-box-shadow: 10px 10px 5px #39ff14;
+}
+#handle:focus {
+  border: 4px solid greenyellow;
+}
+#problems {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#problems a {
+  color: white;
+  font-size: 28px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 50px;
+}
+#buttons button {
+  padding: 12px 20px;
+  margin: 0 20px;
+  font-size: 18px;
+  color: #39ff14;
+  background-color: black;
+  outline: none;
+  border: 4px solid #39ff14;
+  font-weight: bold;
+}
+#buttons button:hover{
+  background-color: #39ff14;
+  border: 8px solid white;
+  color: black;
+  cursor: pointer;
+}
+span {
+  color: #39ff14;
+}
