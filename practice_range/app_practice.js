@@ -21,8 +21,9 @@ function getProblem() {
 }
 function storeProblems(problems) {
   probs = problems;
-  document.getElementById("status").innerHTML =
-    `<span>Status: <i class="bi bi-check-lg" style="color:greenyellow;" width= "32" height= "32"></i> </span>Problem Set Loaded. You may Proceed`;
+  document.getElementById(
+    "status"
+  ).innerHTML = `<span>Status: <i class="bi bi-check-lg" style="color:greenyellow;" width= "32" height= "32"></i> </span>Problem Set Loaded. You may Proceed`;
   check = true;
   handleinput.style.visibility = "visible";
 }
@@ -62,7 +63,7 @@ function collectProblems(rating) {
   console.log(rating);
   console.log(probs);
   let tempSelected = probs.result.problems.filter(
-    (x) => x.rating >= rating - 50 && x.rating <= rating + 200
+    (x) => x.rating >= rating - 50 && x.rating <= rating + 300
   );
   if (tempSelected.length == 0) {
     alert("No Problem Found!");
@@ -113,8 +114,8 @@ function goodbye() {
   container.innerHTML = "";
   alert(`Great! You are improving. Your Score: ${score}`);
   handleinput.style.visibility = "visible";
-  buttons.style.visibility= "hidden";
-  document.getElementById("yourhandle").innerText= null;
-  handle.value=null;
+  buttons.style.visibility = "hidden";
+  document.getElementById("yourhandle").innerText = null;
+  handle.value = null;
   return;
 }
