@@ -16,6 +16,7 @@ function displayProblems(problems) {
     `<span>Status: <i class="bi bi-check-lg" width= "32" height= "32"></i> </span>Problem Set Loaded. Now You Can Search`;
   check = true;
   document.getElementById("userinput").style.visibility = "visible";
+  console.log(probs);
 }
 
 setTimeout(getProblem, 3000);
@@ -29,13 +30,16 @@ function searchProblem() {
     let links = arr.map((x) => ({
       name: x.name,
       link: `https://codeforces.com/contest/${x.contestId}/problem/${x.index}`,
+      type: x.index,
+      rating: x.rating
     }));
     if (toSearch != "") {
       container.innerHTML = "";
       for (let i of links) {
         let anchors = document.createElement("a");
+        anchors.id= "names"
         anchors.href = i.link;
-        anchors.innerText = `${i.name}  `;
+        anchors.innerHTML = `${i.type} - ${i.name}<br> <span id="rating">Rated: ${i.rating}</span> <br>`;
         // anchors.style.margin = "10px 8px";
       
         anchors.target = "_blank";
